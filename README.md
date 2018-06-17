@@ -54,3 +54,6 @@ Don't forget some styling like this on .swiper-background
         background-size: cover;
     }
 ```
+
+### Anomaly Field Type Image
+This extension won't work without it. Go PRO wih PyroCMS to get it!
