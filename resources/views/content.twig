@@ -6,7 +6,7 @@
     <div class="swiper-wrapper">
         
         <!-- Slides -->
-        {% for image in block.entry.images %}
+        {% for image in block.entry.slides(block) %}
         
             <div class="swiper-slide">
                 <div data-background="{{ image.image.cropped().path }}" class="swiper-lazy swiper-background">
