@@ -44,7 +44,46 @@ To make any blocks render within pyro cms, either use `{{ page.block.render()|ra
 Make sure you read the Swiper documentation if you need to know how to use responsive images or set other configurations : [Swiper Documentation](http://idangero.us/swiper/api/)
 
 ### Image ratio
-For the first versions we have a set ratio to 16:10, but this will be possible to configure later on.
+Later on you will be able to set other ratios more easily. For now, if you don't want to use our 16:10 pre-set value. Simply run this command:`php artisan make:migration change_swiper_ratio` and then edit your file within database/migrations to look like this :
+
+```
+<?php
+
+use Anomaly\Streams\Platform\Database\Migration\Migration;
+
+class ChangeSwiperRatio extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        $field = $this->fields()->findBySlugAndNamespace('image', 'swiper_block');
+        $field->setAttribute('config', [
+            'aspect_ratio'=> '16:9' // Change this to whatever you want
+        ])->save();
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        $field = $this->fields()->findBySlugAndNamespace('image', 'swiper_block');
+        $field->setAttribute('config', [
+            'aspect_ratio'=> '16:10'
+        ])->save();
+    }
+}
+```
+
+Then run `php artisan migrate`. If you decide you set the wrong ratio. Just run `php artisan migrate:rollback --step=1`, change your file again and then run `php artisan migrate`.
+
+
 
 ### Css
 Make sure to import the swiper css file : `@import '~swiper/dist/css/swiper.css';` and don't forget some styling like this on .swiper-background
