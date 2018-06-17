@@ -1,0 +1,58 @@
+
+<!-- Slider main container -->
+<div class="swiper-container">
+    
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        
+        <!-- Slides -->
+        {% for image in block.entry.images %}
+        
+            <div class="swiper-slide">
+                <div data-background="{{ image.image.cropped().fit(300,150).path }}" class="swiper-lazy swiper-background">
+                </div>
+            </div>
+    
+        {% endfor %}
+    </div>
+    
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+
+</div>
+
+{# <div
+        class="image_slider flex flex-wrap"
+        data-items="{{ block.configuration('display_items', 2) }}"
+        data-mode="{{ block.configuration('transition_animation', 'carousel') }}"
+        data-speed="{{ block.configuration('transition_speed', 300) }}"
+        data-arrowKeys="true">
+    {% for image in block.entry.slides(block) %}
+        <div class="image_slider__item">
+            <a
+                    href="{{ image.make.path }}"
+                    class="image_slider__link"
+                    data-sub-html="#caption-{{ block.id }}-{{ image.id }}">
+
+                {{ image.make.class('image_slider__image').fit(block.configuration('image_width').value, block.configuration('image_height').value)|raw }}
+
+                <div id="caption-{{ block.id }}-{{ image.id }}" class="image_slider__caption">
+                    {% if block.configuration('captions').isTrue() %}
+                        {% if image.title.value or block.configuration('prepend_titles').isTrue() %}
+                            <strong>{{ image.title }}{{ image.caption.value ? ':' }}</strong>
+                        {% endif %}
+                        {{ image.caption }}
+                    {% endif %}
+                </div>
+
+            </a>
+        </div>
+    {% endfor %}
+</div> #}

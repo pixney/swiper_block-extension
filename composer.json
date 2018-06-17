@@ -1,0 +1,32 @@
+{
+    "name": "pixney/swiper_block-extension",
+    "description": "This is a very cool package!",
+    "type": "streams-addon",
+    "version": "0.1.0",
+    "keywords": ["pyrocms","swiper","block","extension"],
+    "homepage": "https://pixney.com",
+    "time": "2018-06-17",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "William Åström",
+            "email": "william@pixney.com",
+            "homepage": "https://pixney.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "hello@pixney.com",
+        "issues": "https://github.com/jolicode/jane/issues",
+        "docs": "https://github.com/jolicode/jane/wiki"
+    },
+    "require": {
+        "anomaly/blocks-module": "~1.1.0",
+        "anomaly/streams-platform": "~1.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pixney\\SwiperBlockExtension\\": "src/"
+        }
+    }
+}
