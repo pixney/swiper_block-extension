@@ -9,7 +9,7 @@
         {% for image in block.entry.images %}
         
             <div class="swiper-slide">
-                <div data-background="{{ image.image.cropped().fit(300,150).path }}" class="swiper-lazy swiper-background">
+                <div data-background="{{ image.image.cropped().path }}" class="swiper-lazy swiper-background">
                 </div>
             </div>
     

@@ -42,3 +42,6 @@ You are now able to find edit files within : `resources/default/addons/pixney/sw
 To make any blocks render within pyro cms, either use `{{ page.block.render()|raw }}` or read the documentation to see how to fully customize the output.
 
 Make sure you read the Swiper documentation if you need to know how to use responsive images or set other configurations : [Swiper Documentation](http://idangero.us/swiper/api/)
+
+### Image ratio
+For the first versions we have a set ratio to 16:10, but this will be possible to configure later on.

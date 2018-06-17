@@ -11,7 +11,12 @@ class PixneyExtensionSwiperBlockCreateSwiperBlockFields extends Migration
      * @var array
      */
     protected $fields = [
-        'image'      => 'anomaly.field_type.image',
+        'image' => [
+            'type'   => 'anomaly.field_type.image',
+            'config' => [
+                'aspect_ratio'  => '16:10',
+            ]
+        ],
         'images'     => [
             'type'   => 'anomaly.field_type.repeater',
             'config' => [
