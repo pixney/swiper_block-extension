@@ -45,3 +45,12 @@ Make sure you read the Swiper documentation if you need to know how to use respo
 
 ### Image ratio
 For the first versions we have a set ratio to 16:10, but this will be possible to configure later on.
+
+### Css
+Don't forget some styling like this on .swiper-background
+```
+    .swiper-background {
+        height: 100vh;
+        background-size: cover;
+    }
+```
