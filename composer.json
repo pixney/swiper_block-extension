@@ -2,7 +2,7 @@
     "name": "pixney/swiper_block-extension",
     "description": "Swiper slider block extension for Pyrocms",
     "type": "streams-addon",
-    "version": "0.1.0",
+    "version": "0.1.14",
     "keywords": ["pyrocms","swiper","block","extension"],
     "homepage": "https://pixney.com",
     "time": "2018-06-17",
