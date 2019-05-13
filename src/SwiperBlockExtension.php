@@ -25,10 +25,9 @@ class SwiperBlockExtension extends BlockExtension
 
     public function getView()
     {
-        //  return $this->block->configuration('theme', 'pixney.extension.swiper_block::content');
         $settings      = app(SettingRepositoryInterface::class);
         $setting       = $settings->get('streams::standard_theme');
-        $this->wrapper = $setting->value . '::blocks/global/wrapper';
-        return $setting->value . '::blocks/swiper';
+        $this->wrapper = $setting->value . '::blocks/swiper_block/wrapper';
+        return $setting->value . '::blocks/swiper_block';
     }
 }
