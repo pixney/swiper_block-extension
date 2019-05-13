@@ -18,7 +18,7 @@ class CopyViews extends Command
      *
      * @var string
      */
-    protected $signature = 'pb:swipe';
+    protected $signature = 'pb:swiper';
 
     /**
      * The console command description.
@@ -66,7 +66,7 @@ class CopyViews extends Command
 
         $this->filesystem->copyDirectory(
             "{$this->blockPath}/resources/views/blocks",
-            "{$this->themePath}/resources/blocks/{$this->blockSlug}"
+            "{$this->themePath}/resources/views/blocks/{$this->blockSlug}"
         );
     }
 

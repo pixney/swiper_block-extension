@@ -28,6 +28,6 @@ class SwiperBlockExtension extends BlockExtension
         $settings      = app(SettingRepositoryInterface::class);
         $setting       = $settings->get('streams::standard_theme');
         $this->wrapper = $setting->value . '::blocks/swiper_block/wrapper';
-        return $setting->value . '::blocks/swiper_block';
+        return $setting->value . '::blocks/swiper_block/content';
     }
 }
