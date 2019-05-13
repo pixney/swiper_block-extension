@@ -1,14 +1,30 @@
 # Installation
+Add the following to the composer json file:
+```
+{
+  "repositories": [{
+    "type": "composer",
+    "url": "https://packages.pixney.com"
+  }]
+}
+```
 
-Run `composer require "pixney/swiper_block-extension":"~0.2.0"` and then `composer dump` and ´php artisan addon:install swiper_block´
+## Require the block 
+`composer require pixney/swiper_block-extension`
 
-## Install swiper
+## Dump 
+`composer dump`
+
+## Install swiper 
 `npm install swiper`
+
+## Install block
+´php artisan addon:install swiper_block´
 
 ## Copy views
 `pb:swipe`
 
-## Init swiper (in app.js for example)
+# Init swiper (in app.js for example)
 ```
 import Swiper from 'Swiper';
 var mySwiper = new Swiper('.swiper-container', {
@@ -34,17 +50,17 @@ var mySwiper = new Swiper('.swiper-container', {
 });
 ```
 
-### Edit views
+# Edit views
 When you have copied the views, you will be able to find these within your theme directory:
 `resources/blocks/swiper_block`
 
 
-## Make Blocks work
+# Make Blocks work
 Within your page view, to be able top render blocks add `{{ page.block.render()|raw }}` or read the documentation to see how to fully customize the output.
 
 Make sure you read the Swiper documentation if you need to know how to use responsive images or set other configurations : [Swiper Documentation](http://idangero.us/swiper/api/)
 
-### Image ratio
+# Image ratio
 Later on you will be able to set other ratios more easily. For now, if you don't want to use our 16:10 pre-set value. Simply run this command:`php artisan make:migration change_swiper_ratio` and then edit your file within database/migrations to look like this :
 
 ```
@@ -95,5 +111,5 @@ Make sure to import the swiper css file : `@import '~swiper/dist/css/swiper.css'
     }
 ```
 
-### Anomaly Field Type Image
+# Anomaly Field Type Image
 This extension won't work without it. Go PRO wih PyroCMS to get it!
