@@ -1,9 +1,12 @@
 # Installation
 
-Run `composer require "pixney/swiper_block-extension":"~0.1.0"` and then `composer dump` and ´php artisan addon:install swiper_block´
+Run `composer require "pixney/swiper_block-extension":"~0.2.0"` and then `composer dump` and ´php artisan addon:install swiper_block´
 
 ## Install swiper
 `npm install swiper`
+
+## Copy views
+`pb:swipe`
 
 ## Init swiper (in app.js for example)
 ```
@@ -31,15 +34,13 @@ var mySwiper = new Swiper('.swiper-container', {
 });
 ```
 
-### Make changes
-If you would like to make changes to the markup used (for example if you want to
-change the class name or remove the scrollbar) simply publish the addon and then edit
-the twig file as you like: `php artisan addon:publish swiper_block`
+### Edit views
+When you have copied the views, you will be able to find these within your theme directory:
+`resources/blocks/swiper_block`
 
-You are now able to find edit files within : `resources/default/addons/pixney/swiper_block-extension/`
 
-## Other stuff
-To make any blocks render within pyro cms, either use `{{ page.block.render()|raw }}` or read the documentation to see how to fully customize the output.
+## Make Blocks work
+Within your page view, to be able top render blocks add `{{ page.block.render()|raw }}` or read the documentation to see how to fully customize the output.
 
 Make sure you read the Swiper documentation if you need to know how to use responsive images or set other configurations : [Swiper Documentation](http://idangero.us/swiper/api/)
 

@@ -4,6 +4,7 @@ namespace Pixney\SwiperBlockExtension;
 
 use Anomaly\BlocksModule\Block\BlockExtension;
 use Pixney\SwiperBlockExtension\Block\BlockModel;
+use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 
 class SwiperBlockExtension extends BlockExtension
 {
@@ -20,14 +21,14 @@ class SwiperBlockExtension extends BlockExtension
      */
     protected $provides = 'anomaly.module.blocks::block.swiper';
     protected $model    = BlockModel::class;
+    protected $category = 'content';
 
-    /**
-     * Get the view.
-     *
-     * @return null|string
-     */
     public function getView()
     {
-        return $this->block->configuration('theme', 'pixney.extension.swiper_block::content');
+        //  return $this->block->configuration('theme', 'pixney.extension.swiper_block::content');
+        $settings      = app(SettingRepositoryInterface::class);
+        $setting       = $settings->get('streams::standard_theme');
+        $this->wrapper = $setting->value . '::blocks/global/wrapper';
+        return $setting->value . '::blocks/swiper';
     }
 }

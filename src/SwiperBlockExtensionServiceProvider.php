@@ -27,7 +27,9 @@ class SwiperBlockExtensionServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $commands = [];
+    protected $commands = [
+        \Pixney\SwiperBlockExtension\Command\CopyViews::class
+    ];
 
     /**
      * The addon's scheduled commands.
